@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
+import iconPng from "../images/icon.png";
 
 const Guia = () => {
 
@@ -29,4 +30,10 @@ const Guia = () => {
 
 export default Guia;
 
-export const Head = () => <title>Guia | Guia Foca Linux</title>;
+export const Head = () => (
+    <>
+        <title>Guia | Guia Foca Linux</title>
+        <link rel="icon" href={ iconPng } type="image/png"/>
+        <link rel="apple-touch-icon" href={ iconPng }/>
+    </>
+);

@@ -1,8 +1,24 @@
 import * as React from "react";
 import * as headerStyles from "./header.module.css";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
 const Header = () => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            allMdx {
+                nodes {
+                    frontmatter {
+                        title
+                        slug
+                        image_alt
+                        image
+                    }
+                }
+            }
+        }
+    `);
+    const guias = data.allMdx.nodes;
 
     /**********************************
      *** Renderização do componente ***
@@ -24,22 +40,26 @@ const Header = () => {
                                     <Link to="/" className="nav-link active">Início</Link>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button"
+                                    <a className="nav-link dropdown-toggle" href="/" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Guias
                                     </a>
                                     <ul className="dropdown-menu">
                                         <li>
-                                            <Link to="/inic" className="nav-link">Iniciante</Link>
+                                            <Link to={ `/${guias[0].frontmatter.slug}` }
+                                                  className="nav-link">Iniciante</Link>
                                         </li>
                                         <li>
-                                            <Link to="/interm" className="nav-link">intermediário</Link>
+                                            <Link to={ `/${guias[2].frontmatter.slug}` }
+                                                  className="nav-link">intermediário</Link>
                                         </li>
                                         <li>
-                                            <Link to="/avanc" className="nav-link">Avançado</Link>
+                                            <Link to={ `/${guias[3].frontmatter.slug}` }
+                                                  className="nav-link">Avançado</Link>
                                         </li>
                                         <li>
-                                            <Link to="/segur" className="nav-link">Segurança</Link>
+                                            <Link to={ `/${guias[1].frontmatter.slug}` }
+                                                  className="nav-link">Segurança</Link>
                                         </li>
                                     </ul>
                                 </li>

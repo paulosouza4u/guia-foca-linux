@@ -1,8 +1,26 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import iconPng from "../images/icon.png";
 
 const IndexPage = () => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            allMdx {
+                nodes {
+                    frontmatter {
+                        title
+                        slug
+                        image_alt
+                        image
+                    }
+                }
+            }
+        }
+    `);
+    const guias = data.allMdx.nodes;
 
     /**********************************
      *** Renderização do componente ***
@@ -40,8 +58,11 @@ const IndexPage = () => {
                                     sistemas operacionais (como Windows, OS/2, UNIX) e desejam ou, por simples
                                     curiosidade, testar o GNU/Linux.
                                 </p>
-                                <a href="/inic" className="btn btn-outline-primary mb-3">
-                                    Acessar guia Iniciante<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <Link to={ `/${guias[0].frontmatter.slug}` }
+                                      className="btn btn-outline-primary mb-3">
+                                    Acessar guia Iniciante
+                                    <i className="bi bi-box-arrow-in-up-right ms-2"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -61,8 +82,11 @@ const IndexPage = () => {
                                     disposistivos, segurança etc. É uma versão do guia indicada para aqueles que desejam
                                     explorar mais a fundo o sistema GNU/Linux.
                                 </p>
-                                <a href="/interm" className="btn btn-outline-primary mb-3">
-                                    Acessar guia Intermediário<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <Link to={ `/${guias[2].frontmatter.slug}` }
+                                      className="btn btn-outline-primary mb-3">
+                                    Acessar guia Intermediário
+                                    <i className="bi bi-box-arrow-in-up-right ms-2"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -82,8 +106,11 @@ const IndexPage = () => {
                                     (autenticação, firewall restritivo, proxy, politicas de segurança de contas, etc.),
                                     análise de segurança da máquina, solução de vulnerabilidades etc...
                                 </p>
-                                <a href="/avanc" className="btn btn-outline-primary mb-3">
-                                    Acessar guia Avançado<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <Link to={ `/${guias[3].frontmatter.slug}` }
+                                      className="btn btn-outline-primary mb-3">
+                                    Acessar guia Avançado
+                                    <i className="bi bi-box-arrow-in-up-right ms-2"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -98,13 +125,16 @@ const IndexPage = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Segurança</h5>
                                 <p className="card-text">
-                                    Esta versão especial do Guia Foca tem como objetivo ensionar técnicas relacionadas a
-                                    segurança, permissões especiais, controle de acesso, modelos de segurança,
+                                    Esta versão especial do Guia Foca tem como objetivo lecionar técnicas relacionadas
+                                    a segurança, permissões especiais, controle de acesso, modelos de segurança,
                                     criptografia, explicar como funcionam alguns ataques, politicas de segurança de
                                     contas, etc.), análise e rastreio de logs, detecção de vulnerabilidades, etc...
                                 </p>
-                                <a href="/segur" className="btn btn-outline-primary mb-3">
-                                    Acessar guia Segurança<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <Link to={ `/${guias[1].frontmatter.slug}` }
+                                      className="btn btn-outline-primary mb-3">
+                                    Acessar guia Segurança
+                                    <i className="bi bi-box-arrow-in-up-right ms-2"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -116,4 +146,10 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Guia Foca Linux</title>;
+export const Head = () => (
+    <>
+        <title>Guia Foca Linux</title>
+        <link rel="icon" href={ iconPng } type="image/png"/>
+        <link rel="apple-touch-icon" href={ iconPng }/>
+    </>
+);

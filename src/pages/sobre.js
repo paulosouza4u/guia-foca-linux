@@ -1,5 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
+import iconPng from "../images/icon.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Sobre = () => {
 
@@ -13,8 +15,15 @@ const Sobre = () => {
 
                     <div className="col-12 col-md-8 p-2 my-5 mx-auto">
                         <h1 className="display-1 mb-5">Sobre o GuiaFoca</h1>
-                        <article className="mb-5">
+                        <article>
                             <h2>O GuiaFoca</h2>
+                            <StaticImage
+                                className="my-3"
+                                src="../images/icon.png"
+                                alt="Imagem Guia Foca"
+                                width={ 150 }
+                                height={ 150 }
+                            />
                             <p>
                                 O Foca GNU/Linux é um guia que traz desde explicações básicas sobre computadores e o
                                 sistema GNU/Linux até a administração e segurança do sistema. Os assuntos do guia são
@@ -29,7 +38,8 @@ const Sobre = () => {
                                 desta página ou siga-nos no Twitter @focalinux (clicando no link abaixo)
                             </p>
                         </article>
-                        <article className="">
+                        <hr className="my-5"/>
+                        <article>
                             <h3>O Autor</h3>
                             <h4>Gleydson Maziolli</h4>
                             <p>
@@ -54,4 +64,10 @@ const Sobre = () => {
 
 export default Sobre;
 
-export const Head = () => <title>Sobre | Guia Foca Linux</title>;
+export const Head = () => (
+    <>
+        <title>Sobre | Guia Foca Linux</title>
+        <link rel="icon" href={ iconPng } type="image/png"/>
+        <link rel="apple-touch-icon" href={ iconPng }/>
+    </>
+);

@@ -1,0 +1,9 @@
+/** Global CSS */
+
+body {
+    background-color: #DEE2E6;
+}
+
+.debug {
+    border: 1px solid red;
+}

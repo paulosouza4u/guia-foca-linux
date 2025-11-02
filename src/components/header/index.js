@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as headerStyles from "./header.module.css";
+import { Link } from "gatsby";
 
 const Header = () => {
 
@@ -11,7 +12,7 @@ const Header = () => {
             <header className={ headerStyles.header }>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary py-3">
                     <div className="container">
-                        <a className="navbar-brand" href="#">Guia Foca Linux</a>
+                        <a className="navbar-brand fw-bold" href="/">Guia Foca Linux</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +21,7 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                    <Link to="/" className="nav-link active">Início</Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button"
@@ -28,25 +29,33 @@ const Header = () => {
                                         Guias
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Iniciante + Intermediário</a></li>
-                                        <li><a className="dropdown-item" href="#">Avançado</a></li>
                                         <li>
-                                            <hr className="dropdown-divider"/>
+                                            <Link to="/inic" className="nav-link">Iniciante</Link>
                                         </li>
-                                        <li><a className="dropdown-item" href="#">Segurança</a></li>
+                                        <li>
+                                            <Link to="/interm" className="nav-link">intermediário</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/avanc" className="nav-link">Avançado</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/segur" className="nav-link">Segurança</Link>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Sobre</a>
+                                    <Link to="/sobre" className="nav-link">Sobre</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Contato</a>
+                                    <Link to="/contato" className="nav-link">Contato</Link>
                                 </li>
                             </ul>
                             <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search"
-                                       aria-label="Search"/>
-                                <button className="btn btn-outline-primary" type="submit">Search</button>
+                                <input className="form-control me-2" type="search" placeholder="Buscar"
+                                       aria-label="Buscar"/>
+                                <button className="d-flex btn btn-outline-primary" type="submit">
+                                    Buscar<i className="bi bi-search ms-2"></i>
+                                </button>
                             </form>
                         </div>
                     </div>

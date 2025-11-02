@@ -10,8 +10,8 @@ const Footer = () => {
     return (
         <>
             <footer className={ footerStyles.footer }>
-                <div className="d-flex justify-content-center p-5 bg-dark text-white">
-                    <p>Copyright ©{ year } Todos os direitos reservados GuiaFoca</p>
+                <div className="d-flex justify-content-center p-3 bg-dark text-white">
+                    <span><small>Copyright ©{ year } Todos os direitos reservados GuiaFoca</small></span>
                 </div>
             </footer>
         </>

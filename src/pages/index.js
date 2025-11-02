@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
 
@@ -8,12 +9,12 @@ const IndexPage = () => {
      **********************************/
     return (
         <Layout>
-            <div className="container debug">
-                <div className="w-100 my-5 text-center debug">
-                    <div className="col-12 col-md-8 mx-auto debug">
-                        <h1 className="display-3">Guia Foca Linux</h1>
-                        <h3>Ensinando desde 1999</h3>
-                        <p className="">
+            <div className="container">
+                <div className="w-100 my-5 text-center">
+                    <div className="col-12 col-md-8 mx-auto">
+                        <h1 className="display-1">Guia Foca Linux</h1>
+                        <h2>Ensinando desde 1999</h2>
+                        <p>
                             O GuiaFoca é um guia que traz desde explicações básicas sobre computadores e o sistema
                             GNU/Linux até a administração e segurança do sistema. Os assuntos do guia são explicados
                             em
@@ -22,9 +23,15 @@ const IndexPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="d-flex flex-wrap text-center my-5 debug">
-                    <div className="col-12 col-md-6 p-1">
-                        <div className="card" style={ { minHeight: "30rem" } }>
+                <div className="d-flex flex-wrap text-center my-5">
+                    <div className="col-12 col-md-6 p-2">
+                        <div className="card rounded-3" style={ { minHeight: "30rem" } }>
+                            <StaticImage
+                                src="../images/capas/cards/img-card-inic.jpg"
+                                alt="Capa do card iniciante"
+                                className="rounded-top-3"
+                                height={ 300 }
+                            />
                             <div className="card-body">
                                 <h5 className="card-title">Iniciante</h5>
                                 <p className="card-text">
@@ -33,13 +40,19 @@ const IndexPage = () => {
                                     sistemas operacionais (como Windows, OS/2, UNIX) e desejam ou, por simples
                                     curiosidade, testar o GNU/Linux.
                                 </p>
-                                <a href="#" className="btn btn-outline-primary">
-                                    Acessar guia<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <a href="/inic" className="btn btn-outline-primary mb-3">
+                                    Acessar guia Iniciante<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-6 p-1">
-                        <div className="card" style={ { minHeight: "30rem" } }>
+                    <div className="col-12 col-md-6 p-2">
+                        <div className="card rounded-3" style={ { minHeight: "30rem" } }>
+                            <StaticImage
+                                src="../images/capas/cards/img-card-inter.jpg"
+                                alt="Capa do card intermediário"
+                                className="rounded-top-3"
+                                height={ 300 }
+                            />
                             <div className="card-body">
                                 <h5 className="card-title">Intermediário</h5>
                                 <p className="card-text">
@@ -48,13 +61,19 @@ const IndexPage = () => {
                                     disposistivos, segurança etc. É uma versão do guia indicada para aqueles que desejam
                                     explorar mais a fundo o sistema GNU/Linux.
                                 </p>
-                                <a href="#" className="btn btn-outline-primary">
-                                    Acessar guia<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <a href="/interm" className="btn btn-outline-primary mb-3">
+                                    Acessar guia Intermediário<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-6 p-1">
-                        <div className="card" style={ { minHeight: "30rem" } }>
+                    <div className="col-12 col-md-6 p-2">
+                        <div className="card rounded-3" style={ { minHeight: "30rem" } }>
+                            <StaticImage
+                                src="../images/capas/cards/img-card-avanc.jpg"
+                                alt="Capa do card avançado"
+                                className="rounded-top-3"
+                                height={ 300 }
+                            />
                             <div className="card-body">
                                 <h5 className="card-title">Avançado</h5>
                                 <p className="card-text">
@@ -63,13 +82,19 @@ const IndexPage = () => {
                                     (autenticação, firewall restritivo, proxy, politicas de segurança de contas, etc.),
                                     análise de segurança da máquina, solução de vulnerabilidades etc...
                                 </p>
-                                <a href="#" className="btn btn-outline-primary">
-                                    Acessar guia<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <a href="/avanc" className="btn btn-outline-primary mb-3">
+                                    Acessar guia Avançado<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-6 p-1">
-                        <div className="card" style={ { minHeight: "30rem" } }>
+                    <div className="col-12 col-md-6 p-2">
+                        <div className="card rounded-3" style={ { minHeight: "30rem" } }>
+                            <StaticImage
+                                src="../images/capas/cards/img-card-seg.jpg"
+                                alt="Capa do card segurança"
+                                className="rounded-top-3"
+                                height={ 300 }
+                            />
                             <div className="card-body">
                                 <h5 className="card-title">Segurança</h5>
                                 <p className="card-text">
@@ -78,8 +103,8 @@ const IndexPage = () => {
                                     criptografia, explicar como funcionam alguns ataques, politicas de segurança de
                                     contas, etc.), análise e rastreio de logs, detecção de vulnerabilidades, etc...
                                 </p>
-                                <a href="#" className="btn btn-outline-primary">
-                                    Acessar guia<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <a href="/segur" className="btn btn-outline-primary mb-3">
+                                    Acessar guia Segurança<i className="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>

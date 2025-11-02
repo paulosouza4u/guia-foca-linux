@@ -11,7 +11,7 @@ const Footer = () => {
         <>
             <footer className={ footerStyles.footer }>
                 <div className="d-flex justify-content-center p-3 bg-dark text-white">
-                    <span><small>Copyright ©{ year } Todos os direitos reservados GuiaFoca</small></span>
+                    <span>Copyright ©{ year } Todos os direitos reservados GuiaFoca</span>
                 </div>
             </footer>
         </>

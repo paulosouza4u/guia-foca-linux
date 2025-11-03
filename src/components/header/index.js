@@ -6,13 +6,12 @@ const Header = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allMdx {
+            allMdx (sort: { frontmatter: { slug: ASC } }) {
                 nodes {
                     frontmatter {
                         title
+                        subtitle
                         slug
-                        image_alt
-                        image
                     }
                 }
             }
@@ -50,15 +49,15 @@ const Header = () => {
                                                   className="nav-link">Iniciante</Link>
                                         </li>
                                         <li>
-                                            <Link to={ `/${guias[2].frontmatter.slug}` }
+                                            <Link to={ `/${guias[1].frontmatter.slug}` }
                                                   className="nav-link">intermediário</Link>
                                         </li>
                                         <li>
-                                            <Link to={ `/${guias[3].frontmatter.slug}` }
+                                            <Link to={ `/${guias[2].frontmatter.slug}` }
                                                   className="nav-link">Avançado</Link>
                                         </li>
                                         <li>
-                                            <Link to={ `/${guias[1].frontmatter.slug}` }
+                                            <Link to={ `/${guias[3].frontmatter.slug}` }
                                                   className="nav-link">Segurança</Link>
                                         </li>
                                     </ul>

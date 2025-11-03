@@ -8,13 +8,12 @@ const IndexPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allMdx {
+            allMdx (sort: { frontmatter: { slug: ASC } }) {
                 nodes {
                     frontmatter {
                         title
+                        subtitle
                         slug
-                        image_alt
-                        image
                     }
                 }
             }
@@ -82,7 +81,7 @@ const IndexPage = () => {
                                     disposistivos, segurança etc. É uma versão do guia indicada para aqueles que desejam
                                     explorar mais a fundo o sistema GNU/Linux.
                                 </p>
-                                <Link to={ `/${guias[2].frontmatter.slug}` }
+                                <Link to={ `/${guias[1].frontmatter.slug}` }
                                       className="btn btn-outline-primary mb-3">
                                     Acessar guia Intermediário
                                     <i className="bi bi-box-arrow-in-up-right ms-2"></i>
@@ -106,7 +105,7 @@ const IndexPage = () => {
                                     (autenticação, firewall restritivo, proxy, politicas de segurança de contas, etc.),
                                     análise de segurança da máquina, solução de vulnerabilidades etc...
                                 </p>
-                                <Link to={ `/${guias[3].frontmatter.slug}` }
+                                <Link to={ `/${guias[2].frontmatter.slug}` }
                                       className="btn btn-outline-primary mb-3">
                                     Acessar guia Avançado
                                     <i className="bi bi-box-arrow-in-up-right ms-2"></i>
@@ -130,7 +129,7 @@ const IndexPage = () => {
                                     criptografia, explicar como funcionam alguns ataques, politicas de segurança de
                                     contas, etc.), análise e rastreio de logs, detecção de vulnerabilidades, etc...
                                 </p>
-                                <Link to={ `/${guias[1].frontmatter.slug}` }
+                                <Link to={ `/${guias[3].frontmatter.slug}` }
                                       className="btn btn-outline-primary mb-3">
                                     Acessar guia Segurança
                                     <i className="bi bi-box-arrow-in-up-right ms-2"></i>

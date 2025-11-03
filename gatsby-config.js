@@ -12,8 +12,8 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "content",
-                path: `${__dirname}/src/content`,
+                name: "guia",
+                path: `${__dirname}/src/guia`,
             },
         },
         {
@@ -21,7 +21,7 @@ module.exports = {
             options: {
                 name: "images",
                 path: `${__dirname}/src/images`,
-            },
+            }
         },
         "gatsby-plugin-mdx",
         "gatsby-plugin-image",

@@ -13,11 +13,9 @@ const Contato = () => {
                 <div className="w-100 text-center my-5">
                     <h1 className="display-1 mb-5">Contato</h1>
                     <h4>Em breve retornamos sua mensagem.</h4>
-                    <form name="contact" method="POST" data-netlify="true" onSubmit={ (event) => {
-                        event.preventDefault();
-                        //alert("Mensagem enviada com sucesso!");
-                    } }
-                          className="card w-25 mx-auto my-5 border border-primary py-5 px-3 rounded">
+                    <form name="contact-form" method="POST" data-netlify="true"
+                          className="card w-50 mx-auto my-5 border border-primary py-5 px-3 rounded">
+                        <input type="hidden" name="form-name" value="contact-form"/>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label"><span
                                 className="text-danger me-1">*</span>Nome:</label>
